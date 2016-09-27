@@ -1,0 +1,531 @@
+*******************************************************************************************************
+*******************************************************************************************************
+***
+*** Created by sim_phasecan.m, version beta 3.1, 01-Mar-2016 16:00:21 on host "[unknown]"
+***
+*******************************************************************************************************
+*******************************************************************************************************
+
+
+
+*******************************************************************************************************
+* Initializing Simulator and Creating Individuals
+
+Please note:
+   .) Delays will be rounded to sampling interval, resolution is 0.333333 ns (10 cm).
+
+Loading Standardsettings
+         ...sim_stdsettings_mfcw.m (rev.: beta 3.0 | svn not functional/available)
+
+Readerpool
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_modulation.m (rev.: beta 3.1 | svn not functional/available)
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_modulation.m (rev.: beta 3.1 | svn not functional/available)
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_modulation.m (rev.: beta 3.1 | svn not functional/available)
+
+Tagpool
+         => WARNING: Settings tag input carrier frequency to frequency of closest reader.
+         ...get_distances.m (rev.: beta 3.1 | svn not functional/available)
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+               => WARNING: Saturating t0_s to minimum to prevent truncation of mod part.
+
+Sensatagpool
+         => WARNING: Setting sensatag input carrier frequency to frequency of closer reader
+         ...get_distances.m (rev.: beta 3.1 | svn not functional/available)
+         ...sensatag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+               => WARNING: Saturating t0_s to minimum to prevent truncation of mod part.
+
+Channels Reader <-> Tag
+         ...channel_newpos.m (rev.: beta 3.1 | svn not functional/available)
+            ...get_distances.m (rev.: beta 3.1 | svn not functional/available)
+         ...channel_newpos.m (rev.: beta 3.1 | svn not functional/available)
+            ...get_distances.m (rev.: beta 3.1 | svn not functional/available)
+
+Channels Reader <-> Sensatag
+         ...channel_newpos.m (rev.: beta 3.1 | svn not functional/available)
+            ...get_distances.m (rev.: beta 3.1 | svn not functional/available)
+
+Channels tag->sensatag
+         ...channel_newpos.m (rev.: beta 3.1 | svn not functional/available)
+            ...get_distances.m (rev.: beta 3.1 | svn not functional/available)
+
+Channels Reader -> Reader
+         ...channel_newpos.m (rev.: beta 3.1 | svn not functional/available)
+            ...get_distances.m (rev.: beta 3.1 | svn not functional/available)
+*******************************************************************************************************
+* Downlink (Query command)
+
+Preparing Query Command
+   Reader 1
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_command.m (rev.: beta 3.1 | svn not functional/available)
+               ...crc.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_modulation.m (rev.: beta 3.1 | svn not functional/available)
+   Reader 2
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_command.m (rev.: beta 3.1 | svn not functional/available)
+               ...crc.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_modulation.m (rev.: beta 3.1 | svn not functional/available)
+   Reader 3
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_command.m (rev.: beta 3.1 | svn not functional/available)
+               ...crc.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_modulation.m (rev.: beta 3.1 | svn not functional/available)
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+         ...sensatag_main.m (rev.: beta 3.1 | svn not functional/available)
+
+Modulate
+   Reader 1
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_oscillator.m (rev.: beta 3.1 | svn not functional/available)
+               => WARNING: Oversampling rate (1.639) is close to critical.
+            ...reader_modulation.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_transmitter.m (rev.: beta 3.1 | svn not functional/available)
+
+Channel Reader -> Tag
+         ...channel_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+            => WARNING: Transient region of channel is longer than the shortest input signal. The output signal will not reach stationarity!
+            Considering the following amount of paths per channel transmitter -> receiver:
+                    rx01 
+              tx01    23 
+              tx02    23 
+              tx03    23 
+            Using syschar_sparsefir_fredcolon.mat (created by syschar_sparsefir.m, rev.: beta 3.0)
+            ...channel_noise.m (rev.: beta 3.1 | svn not functional/available)
+
+Channel Reader -> Sensatag
+         ...channel_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+            => WARNING: Transient region of channel is longer than the shortest input signal. The output signal will not reach stationarity!
+            Considering the following amount of paths per channel transmitter -> receiver:
+                    rx01 
+              tx01    24 
+              tx02    23 
+              tx03    24 
+            Using syschar_sparsefir_fredcolon.mat (created by syschar_sparsefir.m, rev.: beta 3.0)
+            ...channel_noise.m (rev.: beta 3.1 | svn not functional/available)
+
+Demodulate + Decode, Get Link Setup
+   Tag 1
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+               Using tagchar_modulator_c-p2a-sim_a264_d370.mat (created by tagchar_modulator.m, rev.: alpha 4.0)
+               ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Carrier power level (variance): Pav = 2.28e+03 uW (3.59 dBm)
+               Input power / Chip input power: Pin = 1.08e+03 uW (0.35 dBm) / Pic = 9.44e+02 uW (-0.25 dBm)
+               Using tagchar_power.mat (created by tagchar_power.m, rev.: alpha 1.1)
+               Power supply voltage: Vdda = 1.85 V (saturated to bounds)
+               ...findzeros.m (rev.: beta 3.1 | svn not functional/available)
+               Characteristic support:
+                  Extrapolated: 0.0 to 3000.0 MHz
+                  Non-Extrapolated: 700.0 to 1200.0 MHz 
+               => Warning: Phase not supported in filter mode (phase of returned signal identical to carrier phase).
+               Resolution of filterbank: 0.732 MHz / 1.365 us
+               Approximate max error for frequ between bins (highres area of tagchar, not including interpolation):
+                   mod: 4.580e-16  0.000e+00 deg
+                  umod: 4.580e-16  0.000e+00 deg
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_clock.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_demodulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_demodulator.mat (created by tagchar_demodulator.m, rev.: alpha 2.0)
+               ...peakrms.m (rev.: beta 3.1 | svn not functional/available)
+                  ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Downsampling by factor 31 (new fs = 50 x fclk), att of RC-lowp at new fs/2: 34.2 dB.
+               ...peakrms.m (rev.: beta 3.1 | svn not functional/available)
+                  ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_decoding.m (rev.: beta 3.1 | svn not functional/available)
+               ...crc.m (rev.: beta 3.1 | svn not functional/available)
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+
+Demodulate + Decode
+   Sensatag 1
+         ...sensatag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+               Using tagchar_modulator_c-p2a-sim_a264_d370.mat (created by tagchar_modulator.m, rev.: alpha 4.0)
+               ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Carrier power level (variance): Pav = 1.12e+03 uW (0.50 dBm)
+               Reflection power level :NaN uW (NaN dbm), Unmodulated, Prf0 = 4.95e-04 uW (-33.05 dbm); Modulated, Prf1 = 6.48e-04 uW (-31.88 dbm)
+               ...findzeros.m (rev.: beta 3.1 | svn not functional/available)
+               Characteristic support:
+                  Extrapolated: 0.0 to 3000.0 MHz
+                  Non-Extrapolated: 700.0 to 1200.0 MHz 
+               => Warning: Phase not supported in filter mode (phase of returned signal identical to carrier phase).
+               Resolution of filterbank: 0.732 MHz / 1.365 us
+               Approximate max error for frequ between bins (highres area of tagchar, not including interpolation):
+                   mod: 1.383e-15  0.000e+00 deg
+                  umod: 1.383e-15  0.000e+00 deg
+         ...sensatag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_clock.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_demodulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_demodulator.mat (created by tagchar_demodulator.m, rev.: alpha 2.0)
+               ...peakrms.m (rev.: beta 3.1 | svn not functional/available)
+                  ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Downsampling by factor 31 (new fs = 50 x fclk), att of RC-lowp at new fs/2: 34.2 dB.
+               ...peakrms.m (rev.: beta 3.1 | svn not functional/available)
+                  ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_decoding.m (rev.: beta 3.1 | svn not functional/available)
+               ...crc.m (rev.: beta 3.1 | svn not functional/available)
+
+
+*******************************************************************************************************
+* Prepare Uplink (RN16 reply of active tags and sensatags)
+
+Encoding RN16 and Initializing Modulation
+   Tag 1
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_encoding.m (rev.: beta 3.1 | svn not functional/available)
+               ...fsm.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+  Sensatag 1
+         ...sensatag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_encoding.m (rev.: beta 3.1 | svn not functional/available)
+               ...fsm.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+
+Creating Carrier for Modulation
+    Reader 1
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_oscillator.m (rev.: beta 3.1 | svn not functional/available)
+               => WARNING: Oversampling rate (1.639) is close to critical.
+            ...reader_transmitter.m (rev.: beta 3.1 | svn not functional/available)
+    Reader 2
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_oscillator.m (rev.: beta 3.1 | svn not functional/available)
+               => WARNING: Oversampling rate (1.639) is close to critical.
+            ...reader_transmitter.m (rev.: beta 3.1 | svn not functional/available)
+    Reader 3
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+         ...reader_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...reader_oscillator.m (rev.: beta 3.1 | svn not functional/available)
+               => WARNING: Oversampling rate (1.639) is close to critical.
+            ...reader_transmitter.m (rev.: beta 3.1 | svn not functional/available)
+
+
+*******************************************************************************************************
+* Looping Positions
+* pass-smartRF_room, run 1 of 1 (on [unknown], pid 2896)
+
+Modifying Positions
+         ...channel_newpos.m (rev.: beta 3.1 | svn not functional/available)
+            ...get_distances.m (rev.: beta 3.1 | svn not functional/available)
+         ...channel_newpos.m (rev.: beta 3.1 | svn not functional/available)
+            ...get_distances.m (rev.: beta 3.1 | svn not functional/available)
+         ...channel_newpos.m (rev.: beta 3.1 | svn not functional/available)
+            ...get_distances.m (rev.: beta 3.1 | svn not functional/available)
+
+
+****************************************
+* Active Reader: 1
+
+Channel Reader -> Tag
+         ...channel_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+               => Warning: Setting RandStream (mt19937ar) seed to 649219120 (will be reset to prior state before this fcn returns).
+            Considering 23 paths per channel transmitter -> receiver.
+            Using syschar_sparsefir_fredcolon.mat (created by syschar_sparsefir.m, rev.: beta 3.0)
+            ...channel_noise.m (rev.: beta 3.1 | svn not functional/available)
+         ...channel_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+               => Warning: Setting RandStream (mt19937ar) seed to 658283459 (will be reset to prior state before this fcn returns).
+            Considering 23 paths per channel transmitter -> receiver.
+            Using syschar_sparsefir_fredcolon.mat (created by syschar_sparsefir.m, rev.: beta 3.0)
+            ...channel_noise.m (rev.: beta 3.1 | svn not functional/available)
+
+Modulation of RN16 (only active tags)
+   Tag 1
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_clock.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+               Using tagchar_modulator_c-p2a-sim_a264_d370.mat (created by tagchar_modulator.m, rev.: alpha 4.0)
+               ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Carrier power level (variance): Pav = 2.33e+03 uW (3.68 dBm)
+               Input power / Chip input power: Pin = 1.10e+03 uW (0.41 dBm) / Pic = 9.52e+02 uW (-0.21 dBm)
+               Using tagchar_power.mat (created by tagchar_power.m, rev.: alpha 1.1)
+               Power supply voltage: Vdda = 1.85 V (saturated to bounds)
+               ...findzeros.m (rev.: beta 3.1 | svn not functional/available)
+               Characteristic support:
+                  Extrapolated: 0.0 to 3000.0 MHz
+                  Non-Extrapolated: 700.0 to 1200.0 MHz 
+               Resolution of filterbank: 0.732 MHz / 1.365 us
+               Approximate max error for frequ between bins (highres area of tagchar, not including interpolation):
+                   mod: 7.401e-17  8.481e-15 deg
+                  umod: 7.401e-17  4.241e-15 deg
+               => WARNING: Backscatter signal has considerable imaginary part (avg im/re = 0.00012). Check filter operation for symmetry!
+
+Channel Tag -> Sensatag
+         ...channel_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+               => Warning: Setting RandStream (mt19937ar) seed to 1172964985 (will be reset to prior state before this fcn returns).
+               => WARNING: Unable to meet settings. Please check statistics for details.
+               The following problems occured: freq.res
+            Considering 28 paths per channel transmitter -> receiver.
+            Using syschar_sparsefir_fredcolon.mat (created by syschar_sparsefir.m, rev.: beta 3.0)
+            ...channel_noise.m (rev.: beta 3.1 | svn not functional/available)
+
+Channel T+R -> Sensatag
+
+Demodulate + decode
+   Sensatag 1
+         ...sensatag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+               Using tagchar_modulator_c-p2a-sim_a264_d370.mat (created by tagchar_modulator.m, rev.: alpha 4.0)
+               ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Carrier power level (variance): Pav = 2.17e+03 uW (3.36 dBm)
+               Reflection power level :NaN uW (NaN dbm), Unmodulated, Prf0 = 1.13e-03 uW (-29.48 dbm); Modulated, Prf1 = 1.33e-03 uW (-28.75 dbm)
+               ...findzeros.m (rev.: beta 3.1 | svn not functional/available)
+               Characteristic support:
+                  Extrapolated: 0.0 to 3000.0 MHz
+                  Non-Extrapolated: 700.0 to 1200.0 MHz 
+               => Warning: Phase not supported in filter mode (phase of returned signal identical to carrier phase).
+               Resolution of filterbank: 0.732 MHz / 1.365 us
+               Approximate max error for frequ between bins (highres area of tagchar, not including interpolation):
+                   mod: 9.113e-16  0.000e+00 deg
+                  umod: 9.113e-16  0.000e+00 deg
+            ...sensatag_clock.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_demodulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_demodulator.mat (created by tagchar_demodulator.m, rev.: alpha 2.0)
+               ...peakrms.m (rev.: beta 3.1 | svn not functional/available)
+                  ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Downsampling by factor 31 (new fs = 50 x fclk), att of RC-lowp at new fs/2: 34.2 dB.
+               ...peakrms.m (rev.: beta 3.1 | svn not functional/available)
+                  ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+
+
+****************************************
+* Active Reader: 2
+
+Channel Reader -> Tag
+         ...channel_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+               => Warning: Setting RandStream (mt19937ar) seed to 1240528217 (will be reset to prior state before this fcn returns).
+            Considering 23 paths per channel transmitter -> receiver.
+            Using syschar_sparsefir_fredcolon.mat (created by syschar_sparsefir.m, rev.: beta 3.0)
+            ...channel_noise.m (rev.: beta 3.1 | svn not functional/available)
+         ...channel_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+               => Warning: Setting RandStream (mt19937ar) seed to 10217419 (will be reset to prior state before this fcn returns).
+            Considering 23 paths per channel transmitter -> receiver.
+            Using syschar_sparsefir_fredcolon.mat (created by syschar_sparsefir.m, rev.: beta 3.0)
+            ...channel_noise.m (rev.: beta 3.1 | svn not functional/available)
+
+Modulation of RN16 (only active tags)
+   Tag 1
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_clock.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+               Using tagchar_modulator_c-p2a-sim_a264_d370.mat (created by tagchar_modulator.m, rev.: alpha 4.0)
+               ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Carrier power level (variance): Pav = 3.58e+02 uW (-4.46 dBm)
+               Input power / Chip input power: Pin = 2.49e+02 uW (-6.05 dBm) / Pic = 1.79e+02 uW (-7.46 dBm)
+               Using tagchar_power.mat (created by tagchar_power.m, rev.: alpha 1.1)
+               Power supply voltage: Vdda = 0.79 V (saturated to bounds)
+               ...findzeros.m (rev.: beta 3.1 | svn not functional/available)
+               Characteristic support:
+                  Extrapolated: 0.0 to 3000.0 MHz
+                  Non-Extrapolated: 700.0 to 1200.0 MHz 
+               Resolution of filterbank: 0.732 MHz / 1.365 us
+               Approximate max error for frequ between bins (highres area of tagchar, not including interpolation):
+                   mod: 3.701e-17  1.696e-14 deg
+                  umod: 7.401e-17  0.000e+00 deg
+               => WARNING: Backscatter signal has considerable imaginary part (avg im/re = 0.00024). Check filter operation for symmetry!
+
+Channel Tag -> Sensatag
+         ...channel_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+               => Warning: Setting RandStream (mt19937ar) seed to 8762022 (will be reset to prior state before this fcn returns).
+               => WARNING: Unable to meet settings. Please check statistics for details.
+               The following problems occured: freq.res
+            Considering 28 paths per channel transmitter -> receiver.
+            Using syschar_sparsefir_fredcolon.mat (created by syschar_sparsefir.m, rev.: beta 3.0)
+            ...channel_noise.m (rev.: beta 3.1 | svn not functional/available)
+
+Channel T+R -> Sensatag
+
+Demodulate + decode
+   Sensatag 1
+         ...sensatag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+               Using tagchar_modulator_c-p2a-sim_a264_d370.mat (created by tagchar_modulator.m, rev.: alpha 4.0)
+               ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Carrier power level (variance): Pav = 1.08e+03 uW (0.32 dBm)
+               Reflection power level :NaN uW (NaN dbm), Unmodulated, Prf0 = 4.70e-04 uW (-33.27 dbm); Modulated, Prf1 = 6.22e-04 uW (-32.06 dbm)
+               ...findzeros.m (rev.: beta 3.1 | svn not functional/available)
+               Characteristic support:
+                  Extrapolated: 0.0 to 3000.0 MHz
+                  Non-Extrapolated: 700.0 to 1200.0 MHz 
+               => Warning: Phase not supported in filter mode (phase of returned signal identical to carrier phase).
+               Resolution of filterbank: 0.732 MHz / 1.365 us
+               Approximate max error for frequ between bins (highres area of tagchar, not including interpolation):
+                   mod: 1.388e-15  0.000e+00 deg
+                  umod: 1.388e-15  0.000e+00 deg
+            ...sensatag_clock.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_demodulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_demodulator.mat (created by tagchar_demodulator.m, rev.: alpha 2.0)
+               ...peakrms.m (rev.: beta 3.1 | svn not functional/available)
+                  ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Downsampling by factor 31 (new fs = 50 x fclk), att of RC-lowp at new fs/2: 34.2 dB.
+               ...peakrms.m (rev.: beta 3.1 | svn not functional/available)
+                  ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+
+
+****************************************
+* Active Reader: 3
+
+Channel Reader -> Tag
+         ...channel_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+               => Warning: Setting RandStream (mt19937ar) seed to 2549835296 (will be reset to prior state before this fcn returns).
+            Considering 23 paths per channel transmitter -> receiver.
+            Using syschar_sparsefir_fredcolon.mat (created by syschar_sparsefir.m, rev.: beta 3.0)
+            ...channel_noise.m (rev.: beta 3.1 | svn not functional/available)
+         ...channel_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_vivaldi_4x1-20cm.mat (created by channelchar_directivity.m, rev.: alpha 1.3)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+               => Warning: Setting RandStream (mt19937ar) seed to 2798264648 (will be reset to prior state before this fcn returns).
+            Considering 23 paths per channel transmitter -> receiver.
+            Using syschar_sparsefir_fredcolon.mat (created by syschar_sparsefir.m, rev.: beta 3.0)
+            ...channel_noise.m (rev.: beta 3.1 | svn not functional/available)
+
+Modulation of RN16 (only active tags)
+   Tag 1
+         ...tag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_clock.m (rev.: beta 3.1 | svn not functional/available)
+            ...tag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+               Using tagchar_modulator_c-p2a-sim_a264_d370.mat (created by tagchar_modulator.m, rev.: alpha 4.0)
+               ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Carrier power level (variance): Pav = 1.78e+02 uW (-7.51 dBm)
+               Input power / Chip input power: Pin = 1.33e+02 uW (-8.75 dBm) / Pic = 7.97e+01 uW (-10.99 dBm)
+               Using tagchar_power.mat (created by tagchar_power.m, rev.: alpha 1.1)
+               Power supply voltage: Vdda = 0.34 V (saturated to bounds)
+               ...findzeros.m (rev.: beta 3.1 | svn not functional/available)
+               Characteristic support:
+                  Extrapolated: 0.0 to 3000.0 MHz
+                  Non-Extrapolated: 700.0 to 1200.0 MHz 
+               Resolution of filterbank: 0.732 MHz / 1.365 us
+               Approximate max error for frequ between bins (highres area of tagchar, not including interpolation):
+                   mod: 3.956e-09  8.977e-04 deg
+                  umod: 7.401e-17  3.181e-15 deg
+               => WARNING: Backscatter signal has considerable imaginary part (avg im/re = 0.0003). Check filter operation for symmetry!
+
+Channel Tag -> Sensatag
+         ...channel_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_large.m (rev.: beta 3.1 | svn not functional/available)
+            ...channel_directivity.m (rev.: beta 3.1 | svn not functional/available)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+               Using channelchar_directivity_l2-dipole.mat (created by channelchar_directivity.m, rev.: alpha 1.0)
+            ...channel_small.m (rev.: beta 3.1 | svn not functional/available)
+               => Warning: Setting RandStream (mt19937ar) seed to 1167526870 (will be reset to prior state before this fcn returns).
+               => WARNING: Unable to meet settings. Please check statistics for details.
+               The following problems occured: freq.res
+            Considering 28 paths per channel transmitter -> receiver.
+            Using syschar_sparsefir_fredcolon.mat (created by syschar_sparsefir.m, rev.: beta 3.0)
+            ...channel_noise.m (rev.: beta 3.1 | svn not functional/available)
+
+Channel T+R -> Sensatag
+
+Demodulate + decode
+   Sensatag 1
+         ...sensatag_main.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_modulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_modulator_fb.mat (created by tagchar_modulator_filterbank.m, rev.: alpha 1.2)
+               Using tagchar_modulator_c-p2a-sim_a264_d370.mat (created by tagchar_modulator.m, rev.: alpha 4.0)
+               ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Carrier power level (variance): Pav = 6.43e+02 uW (-1.92 dBm)
+               Reflection power level :NaN uW (NaN dbm), Unmodulated, Prf0 = 2.39e-04 uW (-36.21 dbm); Modulated, Prf1 = 3.66e-04 uW (-34.37 dbm)
+               ...findzeros.m (rev.: beta 3.1 | svn not functional/available)
+               Characteristic support:
+                  Extrapolated: 0.0 to 3000.0 MHz
+                  Non-Extrapolated: 700.0 to 1200.0 MHz 
+               => Warning: Phase not supported in filter mode (phase of returned signal identical to carrier phase).
+               Resolution of filterbank: 0.732 MHz / 1.365 us
+               Approximate max error for frequ between bins (highres area of tagchar, not including interpolation):
+                   mod: 1.453e-15  0.000e+00 deg
+                  umod: 1.453e-15  0.000e+00 deg
+            ...sensatag_clock.m (rev.: beta 3.1 | svn not functional/available)
+            ...sensatag_demodulation.m (rev.: beta 3.1 | svn not functional/available)
+               Using tagchar_demodulator.mat (created by tagchar_demodulator.m, rev.: alpha 2.0)
+               ...peakrms.m (rev.: beta 3.1 | svn not functional/available)
+                  ...est_power.m (rev.: beta 3.1 | svn not functional/available)
+               Downsampling by factor 31 (new fs = 50 x fclk), att of RC-lowp at new fs/2: 34.2 dB.
+               ...peakrms.m (rev.: beta 3.1 | svn not functional/av
